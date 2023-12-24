@@ -56,21 +56,21 @@ wg_noise_handshake_create_initiation(struct message_handshake_initiation *dst,
 		    handshake->remote_static))
 		goto out;
 
-	/* s */  使用临时密钥key加密自己的公钥，写入包头
+	/* s */  //使用临时密钥key加密自己的公钥，写入包头
 	message_encrypt(dst->encrypted_static,
 			handshake->static_identity->static_public,
 			NOISE_PUBLIC_KEY_LEN, key, handshake->hash);
 
-	/* ss */  
+	/* ss */  //precomputed_static_static 是自己的私钥和对方公钥通过DH算法计算出来的，双方一直，用这个继续更新chaining_key和key
 	if (!mix_precomputed_dh(handshake->chaining_key, key,
 				handshake->precomputed_static_static))
 		goto out;
 
-	/* {t} */
+	/* {t} */  //用key加密时间戳
 	tai64n_now(timestamp);
 	message_encrypt(dst->encrypted_timestamp, timestamp,
 			NOISE_TIMESTAMP_LEN, key, handshake->hash);
-
+        //为会话生成ID并保存
 	dst->sender_index = wg_index_hashtable_insert(
 		handshake->entry.peer->device->index_hashtable,
 		&handshake->entry);
