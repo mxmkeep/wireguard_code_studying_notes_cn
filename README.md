@@ -25,6 +25,10 @@ wireguard代码阅读笔记，wireguard代码详解
 |socket.c|udp socket实现，负责收发udp包|
 |timers.c|几个定时器的实现逻辑，定时握手、定时keepalive、超时逻辑等|
 |uapi/wireguard.h|netlink接口对接用户态程序用到的各种枚举值|
+|crypto/zinc/blake2s|一种哈希算法，用来在kdf里派生密钥|
+|crypto/zinc/chacha20|流密码加密算法，用来做对称加解密|
+|crypto/zinc/curve25519|非对称加密ECDH，握手阶段使用|
+|crypto/zinc/poly1305|消息一致性算法|
 
 
 
