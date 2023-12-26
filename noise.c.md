@@ -90,10 +90,14 @@ out:
 
 握手发起包的头部信息
 
-![image](https://github.com/mxmkeep/wireguard_code_reading_cn/assets/20048552/c80b9fa2-1bda-4465-b40a-a92bb55b87c6)
+![image](https://github.com/mxmkeep/wireguard_code_studying_notes_cn/assets/20048552/3af9e701-3fdd-4aaf-9935-8adfbb3e10a6)
+
+
 
 握手应答包的头部信息
-![image](https://github.com/mxmkeep/wireguard_code_studying_notes_cn/assets/20048552/ae218a12-405e-4c24-a272-2a9c8aa3c633)
+
+![image](https://github.com/mxmkeep/wireguard_code_studying_notes_cn/assets/20048552/c1891507-d83f-41ca-a1f9-3b7464b12608)
+
 
 
 
