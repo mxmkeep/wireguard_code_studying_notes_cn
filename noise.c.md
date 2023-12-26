@@ -14,7 +14,7 @@ wg_noise_handshake_consume_response()    //客户端收到握手应答并做处�
 ![image](https://github.com/mxmkeep/wireguard_code_reading_cn/assets/20048552/4e6fa18c-5d2e-4b00-a835-3b5cf80bee8b)
 
 
-下面是握手函数wg_noise_handshake_create_initiation的实现过程
+下面是握手函数wg_noise_handshake_create_initiation的实现过程，其他流程类似
 ```c
 bool
 wg_noise_handshake_create_initiation(struct message_handshake_initiation *dst,
@@ -88,8 +88,13 @@ out:
 握手发起包抓包报文内容
 ![image](https://github.com/mxmkeep/wireguard_code_reading_cn/assets/20048552/3e46aa10-6dee-473f-8bc3-f1b5eaf444f1)
 
-头部信息
+握手发起包的头部信息
+
 ![image](https://github.com/mxmkeep/wireguard_code_reading_cn/assets/20048552/c80b9fa2-1bda-4465-b40a-a92bb55b87c6)
+
+握手应答包的头部信息
+![image](https://github.com/mxmkeep/wireguard_code_studying_notes_cn/assets/20048552/ae218a12-405e-4c24-a272-2a9c8aa3c633)
+
 
 
 
