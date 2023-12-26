@@ -61,7 +61,7 @@ wg_noise_handshake_create_initiation(struct message_handshake_initiation *dst,
 			handshake->static_identity->static_public,
 			NOISE_PUBLIC_KEY_LEN, key, handshake->hash);
 
-	/* ss */  //precomputed_static_static 是自己的私钥和对方公钥通过DH算法计算出来的，双方一直，用这个继续更新chaining_key和key
+	/* ss */  //precomputed_static_static 是自己的永久私钥和对方永久公钥通过DH算法计算出来的，双方一致，用这个继续更新chaining_key和key
 	if (!mix_precomputed_dh(handshake->chaining_key, key,
 				handshake->precomputed_static_static))
 		goto out;
