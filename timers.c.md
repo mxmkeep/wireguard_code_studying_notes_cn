@@ -202,6 +202,11 @@ static bool decrypt_packet(struct sk_buff *skb, struct noise_keypair *keypair,
 	}
 ```
 
+## 最后一个包不是本方发的，需在10秒后发一个keepalive过去
+表示自己有收到最后的包，然后双方安静
+
+## 最后一个包是本方发的，但没收到对方的keepalive，需在15秒后主动发起握手
+确认对方是否掉线，主动握手跟之前流程一样，发送19次
 
 
 
