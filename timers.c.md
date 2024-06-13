@@ -95,7 +95,9 @@ void wg_timers_data_received(struct wg_peer *peer)
 ```
 
 ## 3 timer_new_handshake
-主动发消息出去，如果15秒内没回复，则重新发起握手，回调函数 wg_expired_new_handshake
+主动发消息的情况下，正常情况，对端就算没消息回复，也会在10秒后回复个keepalive告知，
+但如果15秒内没回复，则需重新发起握手，确认对端是否挂了，回调函数 wg_expired_new_handshake
+
 
 ```c
 //15秒后，如果对方没回复消息，则重新发起握手
